@@ -17,26 +17,36 @@ document.querySelectorAll('.nav__links a, .nav__actions a[href^="#"]').forEach((
   });
 });
 
-const tabs = document.querySelectorAll(".code-tab");
-const panels = document.querySelectorAll(".code-block");
+function initTabs(
+  tabSelector: string,
+  panelSelector: string,
+  tabAttr: string,
+  panelAttr: string,
+) {
+  const tabs = document.querySelectorAll(tabSelector);
+  const panels = document.querySelectorAll(panelSelector);
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const id = tab.getAttribute("data-tab");
-    if (!id) return;
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const id = tab.getAttribute(tabAttr);
+      if (!id) return;
 
-    tabs.forEach((t) => {
-      t.classList.remove("active");
-      t.setAttribute("aria-selected", "false");
-    });
-    tab.classList.add("active");
-    tab.setAttribute("aria-selected", "true");
+      tabs.forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
 
-    panels.forEach((panel) => {
-      panel.classList.toggle("active", panel.getAttribute("data-panel") === id);
+      panels.forEach((panel) => {
+        panel.classList.toggle("active", panel.getAttribute(panelAttr) === id);
+      });
     });
   });
-});
+}
+
+initTabs(".code-tab:not(.terminal-tab)", ".code-block", "data-tab", "data-panel");
+initTabs(".terminal-tab", ".terminal-block", "data-terminal", "data-terminal-panel");
 
 async function copyText(text: string, button: HTMLButtonElement) {
   try {
@@ -63,7 +73,7 @@ document.querySelector("[data-copy]")?.addEventListener("click", (e) => {
 
 document.querySelector("[data-copy-terminal]")?.addEventListener("click", (e) => {
   const btn = e.currentTarget as HTMLButtonElement;
-  const code = document.querySelector("#terminal-code code");
+  const code = document.querySelector(".terminal-block.active code");
   if (code) void copyText(code.textContent ?? "", btn);
 });
 

@@ -466,20 +466,66 @@
             <p class="eyebrow">Quick start</p>
             <h2 id="qs-heading">Up and running in seconds</h2>
             <p>
-              Clone Kavoru, install, configure, dev. API on port 3131.
+              Clone Kavoru, install with Bun, configure env, and run. Every
+              workflow command you need is one tab away.
             </p>
           </div>
-          <div class="terminal">
-            <div class="terminal__bar">
-              <span></span><span></span><span></span>
-              <span class="terminal__title">terminal</span>
-              <button class="copy-btn" type="button" data-copy-terminal>
-                Copy
+          <div class="terminal-panel">
+            <div class="terminal-tabs code-tabs" role="tablist" aria-label="Bun commands">
+              <button
+                class="terminal-tab code-tab active"
+                role="tab"
+                aria-selected="true"
+                data-terminal="setup"
+              >
+                Setup
+              </button>
+              <button
+                class="terminal-tab code-tab"
+                role="tab"
+                aria-selected="false"
+                data-terminal="dev"
+              >
+                Dev
+              </button>
+              <button
+                class="terminal-tab code-tab"
+                role="tab"
+                aria-selected="false"
+                data-terminal="test"
+              >
+                Test &amp; build
+              </button>
+              <button
+                class="terminal-tab code-tab"
+                role="tab"
+                aria-selected="false"
+                data-terminal="prisma"
+              >
+                Prisma
+              </button>
+              <button
+                class="terminal-tab code-tab"
+                role="tab"
+                aria-selected="false"
+                data-terminal="tooling"
+              >
+                Tooling
               </button>
             </div>
-            <pre
-              id="terminal-code"
-            ><code>git clone https://github.com/mertthesamael/Kavoru.git
+            <div class="terminal">
+              <div class="terminal__bar">
+                <span></span><span></span><span></span>
+                <span class="terminal__title">terminal</span>
+                <button class="copy-btn" type="button" data-copy-terminal>
+                  Copy
+                </button>
+              </div>
+              <pre
+                class="terminal-block active"
+                id="terminal-code"
+                data-terminal-panel="setup"
+              ><code>git clone https://github.com/mertthesamael/Kavoru.git
 cd Kavoru
 bun install
 cp .env.example .env
@@ -487,6 +533,26 @@ bun run dev
 
 # → http://localhost:3131
 # → http://localhost:3131/help</code></pre>
+              <pre class="terminal-block" data-terminal-panel="dev"><code>bun run dev          # hot reload
+bun run start        # prisma pull/generate + run
+
+# compile standalone binary
+bun run build        # Windows
+bun run build:docker # Linux x64 (Docker)</code></pre>
+              <pre class="terminal-block" data-terminal-panel="test"><code>bun test
+
+# run a single test file
+bun test __tests__/controller.test.ts</code></pre>
+              <pre class="terminal-block" data-terminal-panel="prisma"><code>bunx prisma generate
+bunx --bun prisma migrate dev --name init
+bunx prisma db pull</code></pre>
+              <pre class="terminal-block" data-terminal-panel="tooling"><code>bun run otel:view          # trace UI → :4318
+bun run otel:tui           # traces in terminal
+bun run sentry:spotlight   # errors → :8969
+
+docker compose build
+docker compose up -d</code></pre>
+            </div>
           </div>
           <div class="quickstart__links">
             <a

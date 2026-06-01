@@ -683,6 +683,48 @@ section {
   background: var(--bg-elevated);
 }
 
+.terminal-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.terminal-panel .terminal {
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.terminal-tabs {
+  border-bottom: 1px solid var(--border);
+}
+
+.terminal-block {
+  display: none;
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  overflow-x: auto;
+  background: var(--bg-code);
+}
+
+.terminal-block.active {
+  display: block;
+}
+
+.terminal-block code {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #b8b8c4;
+  font-size: inherit;
+  border-radius: 0;
+}
+
 .terminal {
   border: 1px solid var(--border);
   border-radius: var(--radius);
