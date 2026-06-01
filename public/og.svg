@@ -40,7 +40,7 @@
   <!-- Title -->
   <text x="200" y="248" fill="url(#title)" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="72" font-weight="700" letter-spacing="-2">Kavoru</text>
   <text x="200" y="302" fill="#9898a4" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="32" font-weight="500">Elysia starter for humans</text>
-  <text x="200" y="352" fill="#68687a" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="400">Production-ready Bun backend ù JWT ù Prisma ù OTEL ù Kafka ù WebSockets</text>
+  <text x="200" y="352" fill="#68687a" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="400">Production-ready Bun backend | JWT | Prisma | OTEL | Kafka | WebSockets</text>
 
   <!-- Pills -->
   <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="500">

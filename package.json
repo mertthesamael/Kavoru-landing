@@ -5,11 +5,13 @@
   "description": "Landing page for Kavoru — the Elysia starter for humans",
   "type": "module",
   "scripts": {
+    "og:generate": "bun run scripts/generate-og.ts",
     "dev": "vite",
-    "build": "vite build",
+    "build": "bun run og:generate && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "sharp": "^0.34.5",
     "vite": "^6.3.5"
   }
 }

@@ -46,7 +46,7 @@ Included in every build:
 - JSON-LD `SoftwareApplication` schema
 - Auto-generated `robots.txt` + `sitemap.xml`
 
-Update `SITE_URL` in `.env` to match your deployed domain (default: `https://kavoru.dev`).
+Update `SITE_URL` in `.env` to match your deployed domain (default: `https://www.kavoru.com`).
 
 ## Palette
 
@@ -59,6 +59,8 @@ Update `SITE_URL` in `.env` to match your deployed domain (default: `https://kav
 | Lavender | `#c4b5fd` | Code keywords |
 
 Code blocks use a flat dark surface — no background on tokens or inline `<code>` inside `<pre>`.
+
+**OG preview broken?** Set `SITE_URL` to your live domain (e.g. `https://www.kavoru.com`) before `bun run build`. If `og:image` points at the wrong host, Discord/Twitter show a grey empty card. After redeploying, re-share the link to refresh their cache.
 
 ## Brand
 

@@ -35,7 +35,7 @@ function seoPlugin(siteUrl: string) {
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
-  const siteUrl = env.SITE_URL || "https://kavoru.dev";
+  const siteUrl = env.SITE_URL || "https://www.kavoru.com";
 
   return {
     root: ".",
