@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0e0e11"/>
+      <stop offset="1" stop-color="#151518"/>
+    </linearGradient>
+    <linearGradient id="fox" x1="120" y1="80" x2="280" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f06449"/>
+      <stop offset="0.5" stop-color="#e879a9"/>
+      <stop offset="1" stop-color="#8fa6ff"/>
+    </linearGradient>
+    <linearGradient id="title" x1="360" y1="200" x2="900" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffb38a"/>
+      <stop offset="0.45" stop-color="#ececef"/>
+      <stop offset="1" stop-color="#8fa6ff"/>
+    </linearGradient>
+    <radialGradient id="glowL" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(180 120) rotate(90) scale(320)">
+      <stop stop-color="#f06449" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f06449" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1020 480) rotate(90) scale(360)">
+      <stop stop-color="#8fa6ff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#8fa6ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#ffffff" stroke-opacity="0.04" fill="none"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glowL)"/>
+  <rect width="1200" height="630" fill="url(#glowR)"/>
+
+  <!-- Logo mark -->
+  <rect x="80" y="175" width="88" height="88" rx="22" fill="#1c1c21" stroke="#ffffff" stroke-opacity="0.08"/>
+  <path d="M124 205 L156 245 L144 245 L152 275 L124 258 L96 275 L104 245 L92 245 Z" fill="url(#fox)"/>
+  <circle cx="124" cy="232" r="4" fill="#0e0e11"/>
+
+  <!-- Title -->
+  <text x="200" y="248" fill="url(#title)" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="72" font-weight="700" letter-spacing="-2">Kavoru</text>
+  <text x="200" y="302" fill="#9898a4" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="32" font-weight="500">Elysia starter for humans</text>
+  <text x="200" y="352" fill="#68687a" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="400">Production-ready Bun backend ù JWT ù Prisma ù OTEL ù Kafka ù WebSockets</text>
+
+  <!-- Pills -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="500">
+    <rect x="200" y="400" width="56" height="36" rx="18" fill="#1c1c21" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="228" y="424" fill="#ffb38a" text-anchor="middle">Bun</text>
+    <rect x="268" y="400" width="72" height="36" rx="18" fill="#1c1c21" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="304" y="424" fill="#c4b5fd" text-anchor="middle">Elysia</text>
+    <rect x="352" y="400" width="108" height="36" rx="18" fill="#1c1c21" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="406" y="424" fill="#6ee7c7" text-anchor="middle">TypeScript</text>
+    <rect x="472" y="400" width="76" height="36" rx="18" fill="#1c1c21" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="510" y="424" fill="#8fa6ff" text-anchor="middle">Prisma</text>
+    <rect x="560" y="400" width="84" height="36" rx="18" fill="#1c1c21" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="602" y="424" fill="#ffb38a" text-anchor="middle">Docker</text>
+  </g>
+
+  <!-- Footer URL -->
+  <text x="200" y="560" fill="#68687a" font-family="ui-monospace, monospace" font-size="18">github.com/mertthesamael/Kavoru</text>
+</svg>

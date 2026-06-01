@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>Kavoru — Production-ready Elysia Starter for Bun</title>
+    <meta
+      name="description"
+      content="Kavoru is the production-ready Elysia.js starter for humans. Ship APIs fast with Bun, TypeScript, Prisma, JWT auth, OpenAPI, OpenTelemetry, Sentry, Kafka, WebSockets, Resend, and Docker."
+    />
+    <meta
+      name="keywords"
+      content="Kavoru, Elysia, ElysiaJS, Bun, TypeScript, backend starter, API template, Prisma, OpenTelemetry, Sentry, Kafka, WebSocket, starter kit"
+    />
+    <meta name="author" content="mertthesamael" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="__SITE_URL__/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:site_name" content="Kavoru" />
+    <meta property="og:title" content="Kavoru — Production-ready Elysia Starter for Bun" />
+    <meta
+      property="og:description"
+      content="The Elysia starter for humans. JWT, Prisma, OpenAPI, OTEL, Sentry, Kafka, WebSockets, Resend, cron jobs, and Docker — ready on day one."
+    />
+    <meta property="og:image" content="__SITE_URL__/og.png" />
+    <meta property="og:image:secure_url" content="__SITE_URL__/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Kavoru — Elysia starter for humans. Production-ready Bun backend with JWT, Prisma, and observability."
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kavoru — Production-ready Elysia Starter for Bun" />
+    <meta
+      name="twitter:description"
+      content="The Elysia starter for humans. Ship APIs with Bun, TypeScript, Prisma, OTEL, Sentry, Kafka, and more."
+    />
+    <meta name="twitter:image" content="__SITE_URL__/og.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Kavoru — Elysia starter for humans"
+    />
+
+    <!-- App / theme -->
+    <meta name="theme-color" content="#0e0e11" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Kavoru",
+        "alternateName": "Elysia starter for humans",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "description": "Production-ready Elysia.js backend starter for Bun with JWT, Prisma, OpenAPI, OpenTelemetry, Sentry, Kafka, WebSockets, Resend, and Docker.",
+        "url": "__SITE_URL__/",
+        "image": "__SITE_URL__/og.png",
+        "downloadUrl": "https://github.com/mertthesamael/Kavoru",
+        "softwareHelp": "https://github.com/mertthesamael/Kavoru#readme",
+        "author": {
+          "@type": "Person",
+          "name": "mertthesamael",
+          "url": "https://github.com/mertthesamael"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--left" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--right" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a class="nav__brand" href="#">
+        <img src="/favicon.svg" alt="" width="28" height="28" />
+        <span>Kavoru</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#stack">Stack</a>
+        <a href="#quickstart">Quick start</a>
+        <a href="#architecture">Architecture</a>
+      </nav>
+      <div class="nav__actions">
+        <a
+          class="btn btn--ghost"
+          href="https://github.com/mertthesamael/Kavoru"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        <a class="btn btn--primary" href="#quickstart">Get started</a>
+      </div>
+      <button
+        class="nav__menu"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero__badge">
+          <span class="dot"></span>
+          Elysia.js starter for humans
+        </div>
+        <h1 class="hero__title">
+          The production-ready<br />
+          <span class="gradient-text">Bun backend</span>
+        </h1>
+        <p class="hero__subtitle">
+          Kavoru is your jump-start into shipping APIs — JWT auth, Prisma,
+          OpenAPI, OpenTelemetry, Sentry, Kafka, WebSockets, Resend email, cron
+          jobs, and Docker. Drop in a routes file and go.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="#quickstart">
+            Start building
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#features"
+            >Explore features</a
+          >
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <strong>Auto-loaded</strong>
+            <span>Feature modules</span>
+          </div>
+          <div class="stat">
+            <strong>Enveloped</strong>
+            <span>Consistent JSON API</span>
+          </div>
+          <div class="stat">
+            <strong>Observable</strong>
+            <span>OTEL + Sentry</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="code-showcase" aria-labelledby="code-heading">
+        <div class="section-head section-head--center">
+          <p class="eyebrow">Just return</p>
+          <h2 id="code-heading">Thin controllers, typed schemas</h2>
+          <p>
+            Routes stay minimal. Validation lives in schemas. Business logic
+            lives in services — the Elysia way.
+          </p>
+        </div>
+
+        <div class="code-panel">
+          <div class="code-tabs" role="tablist">
+            <button
+              class="code-tab active"
+              role="tab"
+              aria-selected="true"
+              data-tab="module"
+            >
+              routes.ts
+            </button>
+            <button
+              class="code-tab"
+              role="tab"
+              aria-selected="false"
+              data-tab="auth"
+            >
+              auth
+            </button>
+            <button
+              class="code-tab"
+              role="tab"
+              aria-selected="false"
+              data-tab="ws"
+            >
+              websocket
+            </button>
+            <button
+              class="code-tab"
+              role="tab"
+              aria-selected="false"
+              data-tab="email"
+            >
+              resend
+            </button>
+          </div>
+          <div class="code-window">
+            <div class="code-window__bar">
+              <span></span><span></span><span></span>
+              <button class="copy-btn" type="button" data-copy>Copy</button>
+            </div>
+            <pre
+              class="code-block active"
+              data-panel="module"
+            ><code><span class="kw">import</span> Elysia <span class="kw">from</span> <span class="str">"elysia"</span>
+<span class="kw">import</span> { userSchema } <span class="kw">from</span> <span class="str">"../../models/schemas/user"</span>
+<span class="kw">import</span> { UserService } <span class="kw">from</span> <span class="str">"./service"</span>
+
+<span class="kw">export default</span> <span class="kw">new</span> Elysia({
+  name: <span class="str">"users"</span>,
+  prefix: <span class="str">"/users"</span>,
+  tags: [<span class="str">"Users"</span>],
+})
+  .get(<span class="str">"/:id"</span>, ({ params: { id } }) => UserService.findById(id))</code></pre>
+            <pre
+              class="code-block"
+              data-panel="auth"
+            ><code><span class="kw">import</span> Elysia <span class="kw">from</span> <span class="str">"elysia"</span>
+<span class="kw">import</span> { authMiddleware } <span class="kw">from</span> <span class="str">"../../middleware/auth"</span>
+
+<span class="kw">export default</span> <span class="kw">new</span> Elysia({ prefix: <span class="str">"/protected"</span> })
+  .use(authMiddleware)
+  .get(<span class="str">"/"</span>, ({ user }) => user)</code></pre>
+            <pre
+              class="code-block"
+              data-panel="ws"
+            ><code><span class="kw">export default</span> <span class="kw">new</span> Elysia({ prefix: <span class="str">"/realtime"</span> })
+  .ws(<span class="str">"/ws"</span>, {
+    body: wsMessageSchema,
+    open(ws) { RealtimeService.register(ws) },
+    message(ws, { message }) {
+      RealtimeService.handleMessage(ws, message)
+    },
+    close(ws) { RealtimeService.unregister(ws) },
+  })</code></pre>
+            <pre
+              class="code-block"
+              data-panel="email"
+            ><code><span class="kw">import</span> { sendEmail } <span class="kw">from</span> <span class="str">"../../infra/resend"</span>
+
+<span class="kw">await</span> sendEmail({
+  to: user.email,
+  subject: <span class="str">"Welcome to Kavoru"</span>,
+  html: <span class="str">"&lt;p&gt;You're all set.&lt;/p&gt;"</span>,
+})</code></pre>
+          </div>
+        </div>
+
+        <div class="code-highlights">
+          <div class="code-highlight">
+            <span class="hl-label">Modules</span>
+            <h3>Auto-discovered</h3>
+            <p>
+              Add <code>routes.ts</code> under <code>src/modules/</code> —
+              picked up on save.
+            </p>
+          </div>
+          <div class="code-highlight">
+            <span class="hl-label">Validation</span>
+            <h3>Schema-first</h3>
+            <p>
+              Elysia <code>t.*</code> schemas are the single source of truth.
+            </p>
+          </div>
+          <div class="code-highlight">
+            <span class="hl-label">Responses</span>
+            <h3>Global envelope</h3>
+            <p>Return plain data — middleware wraps success and errors.</p>
+          </div>
+          <div class="code-highlight">
+            <span class="hl-label">Observability</span>
+            <h3>Traced by default</h3>
+            <p>Sentry and OpenTelemetry wrap every matched route.</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="features"
+        id="features"
+        aria-labelledby="features-heading"
+      >
+        <div class="section-head section-head--center">
+          <p class="eyebrow">Built-in</p>
+          <h2 id="features-heading">Everything included</h2>
+          <p>
+            Skip weeks of boilerplate. Start with patterns that scale from
+            prototype to production.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-card__icon">🔐</div>
+            <h3>JWT Authentication</h3>
+            <p>
+              Bearer token auth with <code>jose</code>. Public and protected
+              route examples included.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🗄️</div>
+            <h3>Prisma + PostgreSQL</h3>
+            <p>
+              Prisma 7 with config-driven setup, migrations, and seed scripts
+              ready to wire up.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">📖</div>
+            <h3>OpenAPI at /help</h3>
+            <p>
+              Interactive API docs generated from your Elysia routes and schemas
+              automatically.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">📡</div>
+            <h3>OpenTelemetry</h3>
+            <p>
+              Bun-compatible OTLP exporter. Local viewer or Jaeger in Docker
+              Compose.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🐛</div>
+            <h3>Sentry + Spotlight</h3>
+            <p>
+              Error monitoring and performance tracing. Local Spotlight UI — no
+              account required.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">📨</div>
+            <h3>Kafka</h3>
+            <p>
+              Producer, consumer lifecycle, and example publish/status endpoints
+              out of the box.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">⚡</div>
+            <h3>WebSockets</h3>
+            <p>
+              Validated real-time connections with room support and connection
+              registry cleanup.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">✉️</div>
+            <h3>Resend Email</h3>
+            <p>
+              Transactional email infra layer. Call
+              <code>sendEmail()</code> from any service.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">⏱️</div>
+            <h3>Cron Jobs</h3>
+            <p>
+              Scheduled tasks via <code>@elysiajs/cron</code>. Centralized in
+              <code>src/schedules/</code>.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🐳</div>
+            <h3>Docker Ready</h3>
+            <p>
+              Multi-stage Dockerfile plus Compose with Kafka and Jaeger
+              services.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">📦</div>
+            <h3>Response Envelope</h3>
+            <p>
+              Uniform success and error JSON shape on every HTTP route
+              automatically.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🧪</div>
+            <h3>Bun Tests</h3>
+            <p>
+              Integration tests with <code>app.handle()</code> — no server
+              spin-up required.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="stack" id="stack" aria-labelledby="stack-heading">
+        <div class="stack__inner">
+          <div class="section-head">
+            <p class="eyebrow">Tech stack</p>
+            <h2 id="stack-heading">Optimized for Bun, structured for teams</h2>
+            <p>
+              Feature-based modules, infra integrations, and shared middleware —
+              the layout Elysia recommends, ready on day one.
+            </p>
+          </div>
+          <ul class="stack-list">
+            <li><span>Bun</span> Runtime &amp; package manager</li>
+            <li><span>Elysia</span> HTTP framework</li>
+            <li><span>TypeScript</span> End-to-end types</li>
+            <li><span>Prisma 7</span> PostgreSQL ORM</li>
+            <li><span>jose</span> JWT signing</li>
+            <li><span>kafkajs</span> Event streaming</li>
+            <li><span>resend</span> Transactional email</li>
+            <li><span>@elysiajs/opentelemetry</span> Distributed tracing</li>
+            <li><span>@sentry/elysia</span> Error monitoring</li>
+            <li><span>@elysiajs/cron</span> Background jobs</li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        class="architecture"
+        id="architecture"
+        aria-labelledby="arch-heading"
+      >
+        <div class="section-head section-head--center">
+          <p class="eyebrow">Architecture</p>
+          <h2 id="arch-heading">Drop in a routes file, ship a feature</h2>
+        </div>
+        <div class="arch-flow">
+          <div class="arch-node">Request</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-node--highlight">Sentry + OTEL</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">Module routes</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node">Service</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-node--highlight">Envelope</div>
+        </div>
+        <p class="arch-caption">
+          Add <code>src/modules/&lt;feature&gt;/routes.ts</code> —
+          auto-discovered in development. Observability wraps every matched
+          route.
+        </p>
+      </section>
+
+      <section class="quickstart" id="quickstart" aria-labelledby="qs-heading">
+        <div class="quickstart__card">
+          <div class="section-head">
+            <p class="eyebrow">Quick start</p>
+            <h2 id="qs-heading">Up and running in seconds</h2>
+            <p>
+              Clone Kavoru, install, configure, dev. API on port 3131.
+            </p>
+          </div>
+          <div class="terminal">
+            <div class="terminal__bar">
+              <span></span><span></span><span></span>
+              <span class="terminal__title">terminal</span>
+              <button class="copy-btn" type="button" data-copy-terminal>
+                Copy
+              </button>
+            </div>
+            <pre
+              id="terminal-code"
+            ><code>git clone https://github.com/mertthesamael/Kavoru.git
+cd Kavoru
+bun install
+cp .env.example .env
+bun run dev
+
+# → http://localhost:3131
+# → http://localhost:3131/help</code></pre>
+          </div>
+          <div class="quickstart__links">
+            <a
+              href="https://elysiajs.com/essential/best-practice.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Elysia best practices →
+            </a>
+            <a href="https://bun.sh/docs" target="_blank" rel="noreferrer">
+              Bun documentation →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="cta__card">
+          <h2>Ready to build?</h2>
+          <p>
+            Fork Kavoru or use
+            <a
+              href="https://github.com/mertthesamael/Kavoru/generate"
+              target="_blank"
+              rel="noreferrer"
+              >Use this template</a
+            >
+            on GitHub — focus on your product, not plumbing.
+          </p>
+          <a
+            class="btn btn--primary btn--lg"
+            href="https://github.com/mertthesamael/Kavoru"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <a class="nav__brand" href="#">
+          <img src="/favicon.svg" alt="" width="24" height="24" />
+          <span>Kavoru</span>
+        </a>
+        <p>
+          Kavoru · by
+          <a href="https://merto.dev" target="_blank" rel="noreferrer">merto.dev</a>
+          · powered by 🦊 Elysia &amp; Bun · MIT License
+        </p>
+        <div class="footer__links">
+          <a href="https://merto.dev" target="_blank" rel="noreferrer">merto.dev</a>
+          <a href="https://elysiajs.com" target="_blank" rel="noreferrer"
+            >Elysia</a
+          >
+          <a href="https://bun.sh" target="_blank" rel="noreferrer">Bun</a>
+          <a
+            href="https://github.com/mertthesamael/Kavoru"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
