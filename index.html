@@ -143,8 +143,12 @@
         <p class="hero__subtitle">
           Kavoru is your jump-start into shipping APIs — JWT auth, Prisma,
           OpenAPI, OpenTelemetry, Sentry, Kafka, WebSockets, Resend email, cron
-          jobs, and Docker. Drop in a routes file and go.
+          jobs, and Docker. Scaffold a project and drop in a routes file.
         </p>
+        <div class="hero__command" role="group" aria-label="Install command">
+          <code class="hero__command-text">bunx kavoru my-api</code>
+          <button class="copy-btn" type="button" data-copy-hero>Copy</button>
+        </div>
         <div class="hero__actions">
           <a class="btn btn--primary btn--lg" href="#quickstart">
             Start building
@@ -466,8 +470,8 @@
             <p class="eyebrow">Quick start</p>
             <h2 id="qs-heading">Up and running in seconds</h2>
             <p>
-              Clone Kavoru, install with Bun, configure env, and run. Every
-              workflow command you need is one tab away.
+              Scaffold with <code>bunx kavoru</code>, configure env, and run.
+              Every workflow command you need is one tab away.
             </p>
           </div>
           <div class="terminal-panel">
@@ -525,9 +529,8 @@
                 class="terminal-block active"
                 id="terminal-code"
                 data-terminal-panel="setup"
-              ><code>git clone https://github.com/mertthesamael/Kavoru.git
-cd Kavoru
-bun install
+              ><code>bunx kavoru my-api
+cd my-api
 cp .env.example .env
 bun run dev
 

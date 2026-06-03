@@ -77,6 +77,12 @@ document.querySelector("[data-copy-terminal]")?.addEventListener("click", (e) =>
   if (code) void copyText(code.textContent ?? "", btn);
 });
 
+document.querySelector("[data-copy-hero]")?.addEventListener("click", (e) => {
+  const btn = e.currentTarget as HTMLButtonElement;
+  const text = document.querySelector(".hero__command-text");
+  if (text) void copyText(text.textContent ?? "", btn);
+});
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {

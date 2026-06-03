@@ -335,8 +335,33 @@ section {
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--text-muted);
   max-width: 700px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.5rem;
   line-height: 1.75;
+}
+
+.hero__command {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+  margin: 0 auto 2rem;
+  padding: 0.65rem 0.65rem 0.65rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.hero__command-text {
+  font-family: var(--mono);
+  font-size: clamp(0.8125rem, 2.5vw, 0.9375rem);
+  color: var(--peach);
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.hero__command .copy-btn {
+  flex-shrink: 0;
+  margin-left: 0;
 }
 
 .hero__actions {
