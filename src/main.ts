@@ -1,5 +1,9 @@
+import { initFeaturePicker } from "./feature-picker";
+
 const nav = document.querySelector(".nav") as HTMLElement;
 const menuBtn = document.querySelector(".nav__menu") as HTMLButtonElement;
+
+initFeaturePicker();
 
 window.addEventListener("scroll", () => {
   nav.classList.toggle("is-scrolled", window.scrollY > 8);
@@ -95,7 +99,7 @@ const observer = new IntersectionObserver(
   { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
 );
 
-document.querySelectorAll(".feature-card, .stack__inner, .quickstart__card").forEach((el) => {
+document.querySelectorAll(".feature-card, .stack__inner, .quickstart__card, .scaffold-terminal").forEach((el) => {
   (el as HTMLElement).style.opacity = "0";
   (el as HTMLElement).style.transform = "translateY(16px)";
   (el as HTMLElement).style.transition = "opacity 0.5s ease, transform 0.5s ease";

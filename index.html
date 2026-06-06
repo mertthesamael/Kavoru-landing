@@ -105,6 +105,7 @@
       </a>
       <nav class="nav__links" aria-label="Primary">
         <a href="#features">Features</a>
+        <a href="#scaffold">Build</a>
         <a href="#stack">Stack</a>
         <a href="#quickstart">Quick start</a>
         <a href="#architecture">Architecture</a>
@@ -141,9 +142,8 @@
           <span class="gradient-text">Bun backend</span>
         </h1>
         <p class="hero__subtitle">
-          Kavoru is your jump-start into shipping APIs — JWT auth, Prisma,
-          OpenAPI, OpenTelemetry, Sentry, Kafka, WebSockets, Resend email, cron
-          jobs, and Docker. Scaffold a project and drop in a routes file.
+          Kavoru is your jump-start into shipping APIs — pick only the integrations
+          you need via <code>bunx kavoru</code>, then drop in a routes file and go.
         </p>
         <div class="hero__command" role="group" aria-label="Install command">
           <code class="hero__command-text">bunx kavoru my-api</code>
@@ -167,8 +167,8 @@
             <span>Consistent JSON API</span>
           </div>
           <div class="stat">
-            <strong>Observable</strong>
-            <span>OTEL + Sentry</span>
+            <strong>Pick your stack</strong>
+            <span>CLI feature picker</span>
           </div>
         </div>
       </section>
@@ -306,14 +306,16 @@
       >
         <div class="section-head section-head--center">
           <p class="eyebrow">Built-in</p>
-          <h2 id="features-heading">Everything included</h2>
+          <h2 id="features-heading">Pick what you need</h2>
           <p>
-            Skip weeks of boilerplate. Start with patterns that scale from
-            prototype to production.
+            Optional integrations are toggled during <code>bunx kavoru</code> setup.
+            Core pieces — health routes, OpenAPI, response envelope, and tests — are
+            always included.
           </p>
         </div>
         <div class="feature-grid">
-          <article class="feature-card">
+          <article class="feature-card" data-feature-card="auth">
+            <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">🔐</div>
             <h3>JWT Authentication</h3>
             <p>
@@ -321,7 +323,8 @@
               route examples included.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-feature-card="prisma">
+            <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">🗄️</div>
             <h3>Prisma + PostgreSQL</h3>
             <p>
@@ -329,7 +332,8 @@
               ready to wire up.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card feature-card--core">
+            <span class="feature-card__tag feature-card__tag--core">Core</span>
             <div class="feature-card__icon">📖</div>
             <h3>OpenAPI at /help</h3>
             <p>
@@ -337,7 +341,8 @@
               automatically.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-feature-card="otel">
+            <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">📡</div>
             <h3>OpenTelemetry</h3>
             <p>
@@ -345,7 +350,8 @@
               Compose.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-feature-card="sentry">
+            <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">🐛</div>
             <h3>Sentry + Spotlight</h3>
             <p>
@@ -353,7 +359,8 @@
               account required.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-feature-card="kafka">
+            <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">📨</div>
             <h3>Kafka</h3>
             <p>
@@ -361,7 +368,8 @@
               out of the box.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-feature-card="websocket">
+            <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">⚡</div>
             <h3>WebSockets</h3>
             <p>
@@ -369,7 +377,8 @@
               registry cleanup.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-feature-card="resend">
+            <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">✉️</div>
             <h3>Resend Email</h3>
             <p>
@@ -377,7 +386,8 @@
               <code>sendEmail()</code> from any service.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-feature-card="cron">
+            <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">⏱️</div>
             <h3>Cron Jobs</h3>
             <p>
@@ -385,7 +395,8 @@
               <code>src/schedules/</code>.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card" data-feature-card="docker">
+            <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">🐳</div>
             <h3>Docker Ready</h3>
             <p>
@@ -393,7 +404,8 @@
               services.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card feature-card--core">
+            <span class="feature-card__tag feature-card__tag--core">Core</span>
             <div class="feature-card__icon">📦</div>
             <h3>Response Envelope</h3>
             <p>
@@ -401,7 +413,8 @@
               automatically.
             </p>
           </article>
-          <article class="feature-card">
+          <article class="feature-card feature-card--core">
+            <span class="feature-card__tag feature-card__tag--core">Core</span>
             <div class="feature-card__icon">🧪</div>
             <h3>Bun Tests</h3>
             <p>
@@ -409,6 +422,69 @@
               spin-up required.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section class="scaffold" id="scaffold" aria-labelledby="scaffold-heading">
+        <div class="section-head section-head--center">
+          <p class="eyebrow">CLI</p>
+          <h2 id="scaffold-heading">Build your stack</h2>
+          <p>
+            Same flow as <code>bunx kavoru</code> in your terminal — toggle what
+            you need, copy the command, and run it. Feature cards above sync with
+            your picks.
+          </p>
+        </div>
+
+        <div class="scaffold-terminal" id="scaffold-terminal">
+          <div class="scaffold-terminal__shell">
+            <div class="terminal__bar">
+              <span></span><span></span><span></span>
+              <span class="terminal__title">bunx kavoru</span>
+              <button class="copy-btn" type="button" data-copy-scaffold>
+                Copy command
+              </button>
+            </div>
+            <div
+              class="scaffold-terminal__body"
+              tabindex="0"
+              role="listbox"
+              aria-label="Optional features"
+            >
+              <div class="scaffold-terminal__lead">
+                <span class="scaffold-terminal__diamond" aria-hidden="true">◆</span>
+                <span>Select optional features</span>
+                <span class="scaffold-terminal__count" data-feature-count>9/9</span>
+              </div>
+              <ul class="scaffold-terminal__list"></ul>
+              <div class="scaffold-terminal__presets">
+                <button type="button" data-scaffold-all>Select all</button>
+                <button type="button" data-scaffold-minimal>Core only</button>
+                <span class="scaffold-terminal__keys">↑↓ · space · a · m</span>
+              </div>
+              <div class="scaffold-terminal__command" aria-live="polite">
+                <span class="scaffold-terminal__prompt">$</span>
+                <span class="scaffold-terminal__bin">bunx kavoru</span>
+                <input
+                  type="text"
+                  class="scaffold-terminal__project"
+                  value="my-api"
+                  spellcheck="false"
+                  aria-label="Project name"
+                />
+                <span class="scaffold-terminal__flags" data-command-flags></span>
+                <span class="scaffold-terminal__cursor" aria-hidden="true"></span>
+              </div>
+              <p class="scaffold-terminal__next">
+                <span class="scaffold-terminal__dim">then</span>
+                <code data-next-steps>cd my-api &amp;&amp; bun run dev</code>
+              </p>
+            </div>
+          </div>
+          <p class="scaffold-terminal__note">
+            Always included: health routes, OpenAPI at <code>/help</code>, response
+            envelope, Bun tests
+          </p>
         </div>
       </section>
 
@@ -470,8 +546,8 @@
             <p class="eyebrow">Quick start</p>
             <h2 id="qs-heading">Up and running in seconds</h2>
             <p>
-              Scaffold with <code>bunx kavoru</code>, configure env, and run.
-              Every workflow command you need is one tab away.
+              Run <code>bunx kavoru</code>, pick features in the terminal (or use
+              flags), then dev. Every workflow command is one tab away.
             </p>
           </div>
           <div class="terminal-panel">
@@ -530,6 +606,10 @@
                 id="terminal-code"
                 data-terminal-panel="setup"
               ><code>bunx kavoru my-api
+# ↑ checkbox picker in terminal (↑↓ Space Enter)
+# or: bunx kavoru my-api --features auth,prisma,otel
+# or: bunx kavoru my-api --minimal
+
 cd my-api
 cp .env.example .env
 bun run dev
@@ -576,14 +656,14 @@ docker compose up -d</code></pre>
         <div class="cta__card">
           <h2>Ready to build?</h2>
           <p>
-            Fork Kavoru or use
+            Run <code>bunx kavoru my-api</code> and pick your stack — or use
             <a
               href="https://github.com/mertthesamael/Kavoru/generate"
               target="_blank"
               rel="noreferrer"
               >Use this template</a
             >
-            on GitHub — focus on your product, not plumbing.
+            on GitHub for the full starter.
           </p>
           <a
             class="btn btn--primary btn--lg"
