@@ -96,5 +96,5 @@ export function buildScaffoldCommand(
   selection: FeatureSelection,
   projectName = "my-api",
 ): string {
-  return `bunx kavoru ${projectName.trim() || "my-api"}${buildScaffoldFlags(selection)}`;
+  return `bunx kavoru@latest ${projectName.trim() || "my-api"}${buildScaffoldFlags(selection)}`;
 }
