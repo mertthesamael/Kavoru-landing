@@ -1,6 +1,6 @@
 export type FeatureId =
   | "auth"
-  | "prisma"
+  | "postgres"
   | "otel"
   | "sentry"
   | "kafka"
@@ -22,9 +22,9 @@ export const OPTIONAL_FEATURES: FeatureDef[] = [
     description: "Bearer auth, sign-in route, protected routes",
   },
   {
-    id: "prisma",
-    label: "Prisma + PostgreSQL",
-    description: "Prisma 7 config, migrations, seed scripts",
+    id: "postgres",
+    label: "PostgreSQL",
+    description: "Docker Postgres, Prisma 7, auto schema sync",
   },
   {
     id: "otel",
