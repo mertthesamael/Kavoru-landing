@@ -7,7 +7,8 @@ export type FeatureId =
   | "websocket"
   | "resend"
   | "cron"
-  | "docker";
+  | "docker"
+  | "cli";
 
 export type FeatureDef = {
   id: FeatureId;
@@ -60,6 +61,11 @@ export const OPTIONAL_FEATURES: FeatureDef[] = [
     id: "docker",
     label: "Docker",
     description: "Dockerfile and Docker Compose stack",
+  },
+  {
+    id: "cli",
+    label: "Project CLI",
+    description: "kavoru module command, bin, and scaffolds",
   },
 ];
 
