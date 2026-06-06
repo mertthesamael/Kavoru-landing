@@ -144,7 +144,7 @@
         <p class="hero__subtitle">
           Kavoru is your jump-start into shipping APIs — pick integrations via
           <code>bunx kavoru@latest</code>, scaffold modules with
-          <code>bun run kavoru module</code>, and ship.
+          <code>kavoru module</code>, and ship.
         </p>
         <div class="hero__command" role="group" aria-label="Install command">
           <code class="hero__command-text">bunx kavoru@latest my-api</code>
@@ -276,7 +276,7 @@
             <span class="hl-label">Modules</span>
             <h3>CLI scaffold</h3>
             <p>
-              <code>bun run kavoru module billing</code> creates
+              <code>kavoru module billing</code> creates
               <code>routes.ts</code>, <code>service.ts</code>, and
               <code>types.ts</code> — registry updated automatically.
             </p>
@@ -412,7 +412,7 @@
             <h3>Project CLI</h3>
             <p>
               Built-in <code>kavoru</code> command — generate feature modules with
-              <code>bun run kavoru module &lt;name&gt;</code>.
+              <code>kavoru module &lt;name&gt;</code>.
             </p>
           </article>
           <article class="feature-card feature-card--core">
@@ -545,7 +545,7 @@
           <div class="arch-node arch-node--highlight">Envelope</div>
         </div>
         <p class="arch-caption">
-          Run <code>bun run kavoru module users</code> or add
+          Run <code>kavoru module users</code> or add
           <code>src/modules/&lt;feature&gt;/routes.ts</code> — mounted via
           <code>routes.registry.ts</code> with observability on every matched route.
         </p>
@@ -641,14 +641,14 @@ bun run start        # prisma generate + run
 # compile standalone binary
 bun run build        # Windows
 bun run build:docker # Linux x64 (Docker)</code></pre>
-              <pre class="terminal-block" data-terminal-panel="modules"><code>bun run kavoru module billing
-bun run kavoru module user-profile --force
+              <pre class="terminal-block" data-terminal-panel="modules"><code>kavoru module billing
+kavoru module user-profile --force
 
 # creates src/modules/&lt;name&gt;/
 #   routes.ts · service.ts · types.ts
 # updates routes.registry.ts automatically
 
-bunx kavoru@latest module billing   # same, from any Kavoru project</code></pre>
+# after scaffold: kavoru module … (global npm CLI) or .\kavoru.cmd on Windows</code></pre>
               <pre class="terminal-block" data-terminal-panel="test"><code>bun test
 
 # run a single test file
