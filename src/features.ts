@@ -4,6 +4,7 @@ export type FeatureId =
   | "otel"
   | "sentry"
   | "kafka"
+  | "redis"
   | "websocket"
   | "resend"
   | "cron"
@@ -41,6 +42,11 @@ export const OPTIONAL_FEATURES: FeatureDef[] = [
     id: "kafka",
     label: "Kafka",
     description: "Producer, consumer, and example HTTP endpoints",
+  },
+  {
+    id: "redis",
+    label: "Redis",
+    description: "Cache client and CRUD HTTP endpoints",
   },
   {
     id: "websocket",

@@ -8,11 +8,11 @@
     <title>Kavoru — Production-ready Elysia Starter for Bun</title>
     <meta
       name="description"
-      content="Kavoru is the production-ready Elysia.js starter for humans. Ship APIs fast with Bun, TypeScript, Prisma, JWT auth, OpenAPI, OpenTelemetry, Sentry, Kafka, WebSockets, Resend, and Docker."
+      content="Kavoru is the production-ready Elysia.js starter for humans. Ship APIs fast with Bun, TypeScript, Prisma, JWT auth, OpenAPI, OpenTelemetry, Sentry, Kafka, Redis, WebSockets, Resend, and Docker."
     />
     <meta
       name="keywords"
-      content="Kavoru, Elysia, ElysiaJS, Bun, TypeScript, backend starter, API template, Prisma, OpenTelemetry, Sentry, Kafka, WebSocket, starter kit"
+      content="Kavoru, Elysia, ElysiaJS, Bun, TypeScript, backend starter, API template, Prisma, OpenTelemetry, Sentry, Kafka, Redis, WebSocket, starter kit"
     />
     <meta name="author" content="mertthesamael" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -25,7 +25,7 @@
     <meta property="og:title" content="Kavoru — Production-ready Elysia Starter for Bun" />
     <meta
       property="og:description"
-      content="The Elysia starter for humans. JWT, Prisma, OpenAPI, OTEL, Sentry, Kafka, WebSockets, Resend, cron jobs, and Docker — ready on day one."
+      content="The Elysia starter for humans. JWT, Prisma, OpenAPI, OTEL, Sentry, Kafka, Redis, WebSockets, Resend, cron jobs, and Docker — ready on day one."
     />
     <meta property="og:image" content="__SITE_URL__/og.png" />
     <meta property="og:image:secure_url" content="__SITE_URL__/og.png" />
@@ -43,7 +43,7 @@
     <meta name="twitter:title" content="Kavoru — Production-ready Elysia Starter for Bun" />
     <meta
       name="twitter:description"
-      content="The Elysia starter for humans. Ship APIs with Bun, TypeScript, Prisma, OTEL, Sentry, Kafka, and more."
+      content="The Elysia starter for humans. Ship APIs with Bun, TypeScript, Prisma, OTEL, Sentry, Kafka, Redis, and more."
     />
     <meta name="twitter:image" content="__SITE_URL__/og.png" />
     <meta
@@ -67,7 +67,7 @@
         "alternateName": "Elysia starter for humans",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Cross-platform",
-        "description": "Production-ready Elysia.js backend starter for Bun with JWT, Prisma, OpenAPI, OpenTelemetry, Sentry, Kafka, WebSockets, Resend, and Docker.",
+        "description": "Production-ready Elysia.js backend starter for Bun with JWT, Prisma, OpenAPI, OpenTelemetry, Sentry, Kafka, Redis, WebSockets, Resend, and Docker.",
         "url": "__SITE_URL__/",
         "image": "__SITE_URL__/og.png",
         "downloadUrl": "https://github.com/mertthesamael/Kavoru",
@@ -370,6 +370,15 @@
               out of the box.
             </p>
           </article>
+          <article class="feature-card" data-feature-card="redis">
+            <span class="feature-card__tag">Optional</span>
+            <div class="feature-card__icon">🔴</div>
+            <h3>Redis</h3>
+            <p>
+              Cache client with connect lifecycle and example CRUD HTTP endpoints
+              for keys.
+            </p>
+          </article>
           <article class="feature-card" data-feature-card="websocket">
             <span class="feature-card__tag">Optional</span>
             <div class="feature-card__icon">⚡</div>
@@ -402,7 +411,7 @@
             <div class="feature-card__icon">🐳</div>
             <h3>Docker Ready</h3>
             <p>
-              Compose stack with app, Postgres, Kafka, OpenTelemetry, and
+              Compose stack with app, Postgres, Kafka, Redis, OpenTelemetry, and
               Sentry Spotlight — each service under <code>docker/</code>.
             </p>
           </article>
@@ -465,7 +474,7 @@
               <div class="scaffold-terminal__lead">
                 <span class="scaffold-terminal__diamond" aria-hidden="true">◆</span>
                 <span>Select optional features</span>
-                <span class="scaffold-terminal__count" data-feature-count>10/10</span>
+                <span class="scaffold-terminal__count" data-feature-count>11/11</span>
               </div>
               <ul class="scaffold-terminal__list"></ul>
               <div class="scaffold-terminal__presets">
@@ -516,6 +525,7 @@
             <li><span>Prisma 7</span> PostgreSQL ORM</li>
             <li><span>jose</span> JWT signing</li>
             <li><span>kafkajs</span> Event streaming</li>
+            <li><span>ioredis</span> Redis cache</li>
             <li><span>resend</span> Transactional email</li>
             <li><span>@elysiajs/opentelemetry</span> Distributed tracing</li>
             <li><span>@sentry/elysia</span> Error monitoring</li>
