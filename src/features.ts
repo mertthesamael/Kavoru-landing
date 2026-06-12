@@ -8,7 +8,6 @@ export type FeatureId =
   | "websocket"
   | "resend"
   | "cron"
-  | "docker"
   | "cli";
 
 export type FeatureDef = {
@@ -64,14 +63,9 @@ export const OPTIONAL_FEATURES: FeatureDef[] = [
     description: "Scheduled tasks via @elysiajs/cron",
   },
   {
-    id: "docker",
-    label: "Docker",
-    description: "Dockerfile and Docker Compose stack",
-  },
-  {
     id: "cli",
     label: "Project CLI",
-    description: "kavoru module command, bin, and scaffolds",
+    description: "bunx kavoru@latest module & repository scaffolds",
   },
 ];
 
@@ -109,4 +103,9 @@ export function buildScaffoldCommand(
   projectName = "my-api",
 ): string {
   return `bunx kavoru@latest ${projectName.trim() || "my-api"}${buildScaffoldFlags(selection)}`;
+}
+
+export function buildNextSteps(projectName = "my-api"): string {
+  const name = projectName.trim() || "my-api";
+  return `cd ${name} && docker compose up --build`;
 }

@@ -1,6 +1,7 @@
 import {
   OPTIONAL_FEATURES,
   allFeaturesEnabled,
+  buildNextSteps,
   buildScaffoldCommand,
   buildScaffoldFlags,
   minimalFeatures,
@@ -58,7 +59,7 @@ export function initFeaturePicker() {
   function updateCommandLine() {
     const name = projectName();
     flagsEl.textContent = buildScaffoldFlags(selection);
-    nextEl.textContent = `cd ${name} && bun run dev`;
+    nextEl.textContent = buildNextSteps(name);
     root.dataset.command = buildScaffoldCommand(selection, name);
   }
 

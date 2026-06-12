@@ -105,6 +105,7 @@
       </a>
       <nav class="nav__links" aria-label="Primary">
         <a href="#features">Features</a>
+        <a href="#deploy">Deploy</a>
         <a href="#scaffold">Build</a>
         <a href="#stack">Stack</a>
         <a href="#quickstart">Quick start</a>
@@ -119,7 +120,7 @@
         >
           GitHub
         </a>
-        <a class="btn btn--primary" href="#quickstart">Get started</a>
+        <a class="btn btn--primary" href="#deploy">Get started</a>
       </div>
       <button
         class="nav__menu"
@@ -142,17 +143,17 @@
           <span class="gradient-text">Bun backend</span>
         </h1>
         <p class="hero__subtitle">
-          Kavoru is your jump-start into shipping APIs — pick integrations via
-          <code>bunx kavoru@latest</code>, scaffold modules with
-          <code>kavoru module</code>, and ship.
+          Kavoru scaffolds a production-ready Elysia API with Docker Compose
+          baked in — pick integrations via <code>bunx kavoru@latest</code>,
+          run <code>docker compose up</code>, and ship.
         </p>
-        <div class="hero__command" role="group" aria-label="Install command">
+        <div class="hero__command hero__command--primary" role="group" aria-label="Scaffold command">
           <code class="hero__command-text">bunx kavoru@latest my-api</code>
           <button class="copy-btn" type="button" data-copy-hero>Copy</button>
         </div>
         <div class="hero__actions">
-          <a class="btn btn--primary btn--lg" href="#quickstart">
-            Start building
+          <a class="btn btn--primary btn--lg" href="#deploy">
+            See how it deploys
           </a>
           <a class="btn btn--ghost btn--lg" href="#features"
             >Explore features</a
@@ -160,16 +161,160 @@
         </div>
         <div class="hero__stats">
           <div class="stat">
-            <strong>kavoru module</strong>
-            <span>Scaffold features</span>
+            <strong>Docker Compose</strong>
+            <span>Dev &amp; prod ready</span>
           </div>
           <div class="stat">
             <strong>Enveloped</strong>
             <span>Consistent JSON API</span>
           </div>
           <div class="stat">
-            <strong>Pick your stack</strong>
-            <span>CLI feature picker</span>
+            <strong>One command</strong>
+            <span>Full stack up</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="deploy deploy--showcase" id="deploy" aria-labelledby="deploy-heading">
+        <div class="deploy__glow" aria-hidden="true"></div>
+
+        <div class="section-head section-head--center">
+          <p class="eyebrow">Deploy</p>
+          <h2 id="deploy-heading">From scaffold to stack in two commands</h2>
+          <p>
+            Docker Compose ships with every project. One file for local dev with hot
+            reload, the same file detached for prod-like runs — infra wired automatically.
+          </p>
+        </div>
+
+        <div class="deploy-steps" aria-label="Deploy workflow">
+          <div class="deploy-step deploy-step--done">
+            <span class="deploy-step__num">1</span>
+            <div>
+              <strong>Scaffold</strong>
+              <span>bunx kavoru@latest</span>
+            </div>
+          </div>
+          <div class="deploy-step__line" aria-hidden="true"></div>
+          <div class="deploy-step deploy-step--active">
+            <span class="deploy-step__num">2</span>
+            <div>
+              <strong>Compose up</strong>
+              <span>Full stack, one terminal</span>
+            </div>
+          </div>
+          <div class="deploy-step__line" aria-hidden="true"></div>
+          <div class="deploy-step">
+            <span class="deploy-step__num">3</span>
+            <div>
+              <strong>Ship</strong>
+              <span>API at :3131 · docs at /help</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="deploy-showcase">
+          <div class="deploy-showcase__header">
+            <div class="deploy-tabs" role="tablist" aria-label="Environment">
+              <button
+                class="deploy-tab active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                data-deploy-tab="dev"
+              >
+                <span class="deploy-tab__dot deploy-tab__dot--dev"></span>
+                Development
+              </button>
+              <button
+                class="deploy-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-deploy-tab="prod"
+              >
+                <span class="deploy-tab__dot deploy-tab__dot--prod"></span>
+                Production
+              </button>
+            </div>
+            <button class="copy-btn" type="button" data-copy-deploy>Copy</button>
+          </div>
+
+          <div class="deploy-showcase__body">
+            <div class="deploy-panel active" data-deploy-panel="dev">
+              <pre class="deploy-panel__code"><code>bunx kavoru@latest my-api
+cd my-api
+docker compose up --build
+
+# → http://localhost:3131
+# → http://localhost:3131/help
+# src/ volume-mounted — edit &amp; reload</code></pre>
+              <ul class="deploy-panel__tags">
+                <li>Hot reload</li>
+                <li>Prisma auto push</li>
+                <li>OTEL + Spotlight</li>
+              </ul>
+            </div>
+
+            <div class="deploy-panel" data-deploy-panel="prod">
+              <pre class="deploy-panel__code"><code>bun run build:docker
+docker compose up -d --build
+
+# healthcheck → /healthz
+bunx --bun prisma migrate deploy</code></pre>
+              <ul class="deploy-panel__tags">
+                <li>Detached</li>
+                <li>Linux binary</li>
+                <li>Same compose file</li>
+              </ul>
+            </div>
+
+            <div class="deploy-mesh" aria-label="Compose service topology">
+              <div class="deploy-mesh__hub">
+                <span class="deploy-mesh__hub-icon">🦊</span>
+                <strong>app</strong>
+                <span class="deploy-mesh__port">:3131</span>
+              </div>
+              <div class="deploy-mesh__nodes">
+                <div class="deploy-mesh__node" data-service="postgres">
+                  <span>🗄️</span><strong>postgres</strong><em>:5432</em>
+                </div>
+                <div class="deploy-mesh__node" data-service="kafka">
+                  <span>📨</span><strong>kafka</strong><em>:9094</em>
+                </div>
+                <div class="deploy-mesh__node" data-service="redis">
+                  <span>🔴</span><strong>redis</strong><em>:6379</em>
+                </div>
+                <div class="deploy-mesh__node" data-service="otel">
+                  <span>📡</span><strong>otel</strong><em>:4318</em>
+                </div>
+                <div class="deploy-mesh__node" data-service="spotlight">
+                  <span>🐛</span><strong>spotlight</strong><em>:8969</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="deploy-showcase__caption">
+            Infra services join compose when you pick them during scaffold.
+            <strong>app</strong> is always included.
+          </p>
+        </div>
+
+        <div class="deploy-env-flow">
+          <div class="deploy-env-card">
+            <span class="deploy-env-card__badge">Host</span>
+            <h4><code>.env</code></h4>
+            <p>Local defaults from <code>.env.example</code></p>
+          </div>
+          <div class="deploy-env-card__connector" aria-hidden="true">
+            <span class="deploy-env-card__arrow">→</span>
+            <span class="deploy-env-card__label">overrides in stack</span>
+          </div>
+          <div class="deploy-env-card deploy-env-card--highlight">
+            <span class="deploy-env-card__badge deploy-env-card__badge--stack">Stack</span>
+            <h4><code>docker/app/.env</code></h4>
+            <p><code>postgres:5432</code> · <code>kafka:9092</code> · <code>redis:6379</code></p>
           </div>
         </div>
       </section>
@@ -276,9 +421,10 @@
             <span class="hl-label">Modules</span>
             <h3>CLI scaffold</h3>
             <p>
-              <code>kavoru module billing</code> creates
+              <code>bunx kavoru@latest module billing</code> creates
               <code>routes.ts</code>, <code>service.ts</code>, and
-              <code>types.ts</code> — registry updated automatically.
+              <code>types.ts</code>. With postgres,
+              <code>bunx kavoru@latest repository user</code> scaffolds Prisma + CRUD.
             </p>
           </div>
           <div class="code-highlight">
@@ -311,8 +457,8 @@
           <h2 id="features-heading">Pick what you need</h2>
           <p>
             Optional integrations are toggled during <code>bunx kavoru@latest</code> setup.
-            Core pieces — health routes, OpenAPI, response envelope, and tests — are
-            always included.
+            Docker Compose is always included. Core pieces — health routes, OpenAPI,
+            response envelope, and tests — ship with every project.
           </p>
         </div>
         <div class="feature-grid">
@@ -406,13 +552,14 @@
               <code>src/schedules/</code>.
             </p>
           </article>
-          <article class="feature-card" data-feature-card="docker">
-            <span class="feature-card__tag">Optional</span>
+          <article class="feature-card feature-card--core">
+            <span class="feature-card__tag feature-card__tag--core">Core</span>
             <div class="feature-card__icon">🐳</div>
-            <h3>Docker Ready</h3>
+            <h3>Docker Compose</h3>
             <p>
-              Compose stack with app, Postgres, Kafka, Redis, OpenTelemetry, and
-              Sentry Spotlight — each service under <code>docker/</code>.
+              Every project ships with <code>docker-compose.yaml</code> and an app
+              image. Add Postgres, Kafka, Redis, OTEL, and Spotlight when you pick
+              those features.
             </p>
           </article>
           <article class="feature-card" data-feature-card="cli">
@@ -420,8 +567,9 @@
             <div class="feature-card__icon">⌨️</div>
             <h3>Project CLI</h3>
             <p>
-              Built-in <code>kavoru</code> command — generate feature modules with
-              <code>kavoru module &lt;name&gt;</code>.
+              Generate modules with
+              <code>bunx kavoru@latest module &lt;name&gt;</code> and Prisma repos with
+              <code>bunx kavoru@latest repository &lt;name&gt;</code> (postgres required).
             </p>
           </article>
           <article class="feature-card feature-card--core">
@@ -474,7 +622,7 @@
               <div class="scaffold-terminal__lead">
                 <span class="scaffold-terminal__diamond" aria-hidden="true">◆</span>
                 <span>Select optional features</span>
-                <span class="scaffold-terminal__count" data-feature-count>11/11</span>
+                <span class="scaffold-terminal__count" data-feature-count>10/10</span>
               </div>
               <ul class="scaffold-terminal__list"></ul>
               <div class="scaffold-terminal__presets">
@@ -497,13 +645,13 @@
               </div>
               <p class="scaffold-terminal__next">
                 <span class="scaffold-terminal__dim">then</span>
-                <code data-next-steps>cd my-api &amp;&amp; bun run dev</code>
+                <code data-next-steps>cd my-api &amp;&amp; docker compose up --build</code>
               </p>
             </div>
           </div>
           <p class="scaffold-terminal__note">
-            Always included: health routes, OpenAPI at <code>/help</code>, response
-            envelope, Bun tests
+            Always included: Docker Compose, health routes, OpenAPI at
+            <code>/help</code>, response envelope, Bun tests
           </p>
         </div>
       </section>
@@ -530,6 +678,7 @@
             <li><span>@elysiajs/opentelemetry</span> Distributed tracing</li>
             <li><span>@sentry/elysia</span> Error monitoring</li>
             <li><span>@elysiajs/cron</span> Background jobs</li>
+            <li><span>Docker Compose</span> Dev &amp; prod orchestration</li>
           </ul>
         </div>
       </section>
@@ -555,7 +704,8 @@
           <div class="arch-node arch-node--highlight">Envelope</div>
         </div>
         <p class="arch-caption">
-          Run <code>kavoru module users</code> or add
+          Run <code>bunx kavoru@latest module users</code>,
+          <code>bunx kavoru@latest repository user</code>, or add
           <code>src/modules/&lt;feature&gt;/routes.ts</code> — mounted via
           <code>routes.registry.ts</code> with observability on every matched route.
         </p>
@@ -567,8 +717,9 @@
             <p class="eyebrow">Quick start</p>
             <h2 id="qs-heading">Up and running in seconds</h2>
             <p>
-              Run <code>bunx kavoru@latest</code>, pick features in the terminal (or use
-              flags), then scaffold modules and dev. Every workflow command is one tab away.
+              Scaffold with <code>bunx kavoru@latest</code>, bring the stack up with
+              Compose, then run <code>bunx kavoru@latest module</code> or
+              <code>bunx kavoru@latest repository</code>.
             </p>
           </div>
           <div class="terminal-panel">
@@ -617,6 +768,14 @@
                 class="terminal-tab code-tab"
                 role="tab"
                 aria-selected="false"
+                data-terminal="docker"
+              >
+                Docker
+              </button>
+              <button
+                class="terminal-tab code-tab"
+                role="tab"
+                aria-selected="false"
                 data-terminal="tooling"
               >
                 Tooling
@@ -640,42 +799,63 @@
 # or: bunx kavoru@latest my-api --minimal
 
 cd my-api
-cp .env.example .env
-bun run dev
+docker compose up --build
 
 # → http://localhost:3131
-# → http://localhost:3131/help</code></pre>
-              <pre class="terminal-block" data-terminal-panel="dev"><code>bun run dev          # hot reload
+# → http://localhost:3131/help
+
+# host-only alternative:
+# cp .env.example .env && bun run dev</code></pre>
+              <pre class="terminal-block" data-terminal-panel="dev"><code>bun run dev          # hot reload (host)
 bun run start        # prisma generate + run
 
 # compile standalone binary
 bun run build        # Windows
-bun run build:docker # Linux x64 (Docker)</code></pre>
-              <pre class="terminal-block" data-terminal-panel="modules"><code>kavoru module billing
-kavoru module user-profile --force
+bun run build:docker # Linux x64 (Docker image)</code></pre>
+              <pre class="terminal-block" data-terminal-panel="modules"><code>bunx kavoru@latest module billing
+bunx kavoru@latest module user-profile --force
 
 # creates src/modules/&lt;name&gt;/
 #   routes.ts · service.ts · types.ts
 # updates routes.registry.ts automatically
 
-# after scaffold: kavoru module … (global npm CLI) or .\kavoru.cmd on Windows</code></pre>
+bunx kavoru@latest repository user
+
+# requires postgres — creates user.prisma + repositories/user.ts
+# runs bunx prisma generate</code></pre>
               <pre class="terminal-block" data-terminal-panel="test"><code>bun test
 
 # run a single test file
 bun test __tests__/controller.test.ts</code></pre>
-              <pre class="terminal-block" data-terminal-panel="prisma"><code>docker compose up --build   # Postgres + auto db push
+              <pre class="terminal-block" data-terminal-panel="prisma"><code>bunx kavoru@latest repository user   # model + repo + generate
+
+# Postgres + auto db push on container start
+docker compose up --build
 
 bunx prisma generate
 bunx --bun prisma db push     # sync schema (host dev)
 
 # optional versioned migrations
 bunx --bun prisma migrate dev --name init</code></pre>
+              <pre class="terminal-block" data-terminal-panel="docker"><code># full stack (recommended)
+docker compose up --build
+
+# postgres only + host dev
+docker compose up -d postgres
+cp .env.example .env
+bun run dev
+
+# prod-like detached run
+docker compose up -d --build
+
+# rebuild app after dependency changes
+docker compose up --build app</code></pre>
               <pre class="terminal-block" data-terminal-panel="tooling"><code>bun run otel:view          # trace UI → :4318
 bun run otel:tui           # traces in terminal
 bun run sentry:spotlight   # errors → :8969
 
-docker compose up --build
-docker compose up -d</code></pre>
+# or run sidecars via compose
+docker compose up -d otel spotlight</code></pre>
             </div>
           </div>
           <div class="quickstart__links">
@@ -697,7 +877,8 @@ docker compose up -d</code></pre>
         <div class="cta__card">
           <h2>Ready to build?</h2>
           <p>
-            Run <code>bunx kavoru@latest my-api</code> and pick your stack — or use
+            Run <code>bunx kavoru@latest my-api</code> and
+            <code>docker compose up --build</code> — or use
             <a
               href="https://github.com/mertthesamael/Kavoru/generate"
               target="_blank"
